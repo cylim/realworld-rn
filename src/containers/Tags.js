@@ -10,7 +10,7 @@ const Tags = ({ tags, onClickTag }) => {
                 {
                     tags.map(tag =>  (
                         <Button
-                        title={tag}
+                            title={tag}
                             className="tag-default tag-pill"
                             key={tag}
                             onPress={onClickTag(tag, page => agent.Articles.byTag(tag, page), agent.Articles.byTag(tag))} />

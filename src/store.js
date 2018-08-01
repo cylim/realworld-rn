@@ -4,12 +4,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import reducer from './reducers';
 import { promiseMiddleware, localStorageMiddleware } from './middleware';
 
-let composeEnhancers = compose;
-
-
-// if (__DEV__) {
-//     composeEnhancers = composeWithDevTools({ realtime: __DEV__ });
-// }
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const enhancer = composeEnhancers(
     applyMiddleware(promiseMiddleware, localStorageMiddleware),
