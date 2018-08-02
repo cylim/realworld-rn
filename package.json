@@ -6,9 +6,11 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "ios": "react-native run-ios",
     "android": "react-native run-android",
-    "test": "jest"
+    "test": "jest",
+    "xcode": "open ios/realworldRN.xcodeproj"
   },
   "dependencies": {
+    "native-base": "2.7.0",
     "prop-types": "^15.6.2",
     "react": "16.4.1",
     "react-native": "0.56.0",
