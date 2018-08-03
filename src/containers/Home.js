@@ -11,11 +11,14 @@ import {
 import agent from '../agent';
 import Sidebar from '../components/Sidebar';
 import AppHeader from '../components/AppHeader';
+import ArticleList from '../components/ArticleList';
 
 const TEMP_AUTH = false;
 
 const mapStateToProps = state => ({
     ...state.home,
+    ...state.articleList,
+    tags: state.home.tags,
     appName: state.common.appName,
     token: state.common.token
 });
@@ -48,11 +51,19 @@ class Home extends Component {
         this.closeDrawer();
     }
 
-    openDrawer = () => this.drawer._root.open()
-    closeDrawer = () =>  this.drawer._root.close()
+    goToArticle = (slug) => {
+        this.props.navigation.navigate('Article', { slug });
+    }
+
+    goToAuthor = (username) => {
+        this.props.navigation.navigate('User', { username });
+    }
+
+    openDrawer = () => {this.drawer._root.open()}
+    closeDrawer = () =>  {this.drawer._root.close()}
 
     render() {
-        const { navigation, tags } = this.props;
+        const { navigation, tags, pager, articles, loading, articlesCount, currentPage } = this.props;
         console.log(navigation);
         return (
             <Drawer
@@ -69,12 +80,14 @@ class Home extends Component {
                         title='Feeds'
                         isAuth={TEMP_AUTH}
                     />
-                    {/* <ArticleList
-                        pager={props.pager}
-                        articles={props.articles}
-                        loading={props.loading}
-                        articlesCount={props.articlesCount}
-                        currentPage={props.currentPage} /> */}
+                    <ArticleList
+                        pager={pager}
+                        articles={articles}
+                        loading={loading}
+                        articlesCount={articlesCount}
+                        currentPage={currentPage}
+                        goToArticle={this.goToArticle}
+                        goToAuthor={this.goToAuthor} />
             </Drawer>
         );
     }

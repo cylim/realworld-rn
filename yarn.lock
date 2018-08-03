@@ -4326,7 +4326,7 @@ react-native-drawer@2.5.0:
     prop-types "^15.5.8"
     tween-functions "^1.0.1"
 
-react-native-easy-grid@0.2.0:
+react-native-easy-grid@0.2.0, react-native-easy-grid@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/react-native-easy-grid/-/react-native-easy-grid-0.2.0.tgz#4718031aa1baaa2613b829fc807da288eb0d2797"
   dependencies:
@@ -4342,6 +4342,10 @@ react-native-keyboard-aware-scroll-view@0.5.0:
   dependencies:
     prop-types "^15.6.0"
     react-native-iphone-x-helper "^1.0.1"
+
+react-native-paginated-listview@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/react-native-paginated-listview/-/react-native-paginated-listview-1.0.2.tgz#39334bd879f2e7ef1cc4ef5ba5633c20deda0671"
 
 react-native-safe-area-view@^0.7.0:
   version "0.7.0"

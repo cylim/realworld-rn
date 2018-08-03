@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import { Image } from 'react-native';
 import { Content, List, ListItem, Text, Separator } from 'native-base';
 
 import Tags from './Tags';
@@ -26,6 +25,16 @@ const MainList = ({isAuth, navigation}) => {
         </ListItem>
 }
 
+const UserSidebar = ({ isAuth }) => {
+    return isAuth 
+        ? <ListItem style={{ height: 200 }}>
+            <Text>User</Text>
+        </ListItem>
+        : <ListItem style={{ height: 200 }}>
+            <Text>Login</Text>
+        </ListItem>
+}
+
 
 class Sidebar extends PureComponent {
     render () {
@@ -33,8 +42,8 @@ class Sidebar extends PureComponent {
 
         return (
             <Content>
-                <List contentContainerStyle={{ backgroundColor: '#000', marginTop: 120  }}>
-                    <User isAuth={isAuth} />
+                <List style={{ backgroundColor: '#fff' }}>
+                    <UserSidebar isAuth={isAuth} />
                     <MainList
                         isAuth={isAuth} 
                         navigation={navigation} />

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Content, Button, ListItem, Text } from 'native-base';
+import { Content, ListItem, Text } from 'native-base';
 
 import agent from '../agent';
 
